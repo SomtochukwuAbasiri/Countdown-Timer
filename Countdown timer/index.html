@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Countdown Timer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+       background-color:rgb(1, 1, 39);
+       font-family: matura 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       text-align: center;
+       color: gold;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+<img src="c:\Users\CCL\Pictures\Saved Pictures\WhatsApp Image 2024-02-28 at 12.44.52_e43490b8.jpg" height="400" width="650"></a>
+ <br>
+
+<h1>New Year Countdown</h1>
+    <p>Step into the New Year with a heart full of hope and a mind open to endless possibilities. May this year be a crossover of dreams realized and adventures embraced. Happy New Year!"</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <script>
+      const countdown = document.getElementById('countdown');
+      const targetDate = new Date('2025-01-01T00:00:00Z').getTime();
+  
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+  
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  
+        if (distance < 0) {
+          clearInterval(interval);
+          countdown.innerHTML = 'EXPIRED';3
+        }
+      }, 1000);
+    </script>
+</body>
+</html>
